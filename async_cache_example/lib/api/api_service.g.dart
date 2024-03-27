@@ -50,11 +50,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<ToDo> createToDos() async {
+  Future<ToDo> createToDos(ToDo toDo) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
+    _data.addAll(toDo.toJson());
     final _result =
         await _dio.fetch<Map<String, dynamic>>(_setStreamType<ToDo>(Options(
       method: 'POST',
@@ -63,7 +64,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'todo',
+              '/todo',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -90,7 +91,7 @@ class _ApiService implements ApiService {
     )
             .compose(
               _dio.options,
-              'todo',
+              '/todo/${id}',
               queryParameters: queryParameters,
               data: _data,
             )

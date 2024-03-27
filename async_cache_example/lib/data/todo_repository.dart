@@ -48,6 +48,35 @@ class ToDoRepository {
       print('Error fetching ToDos: $e'); // API 호출 중 오류가 발생하면 오류 메시지를 출력합니다.
     }
   }
+
+  Future<void> createToDo(String text) async {
+    try{
+      final newToDo = await _apiService.createToDos(
+        ToDo(id: '', text: text)
+      );
+      await _todoBox.put(newToDo.id, newToDo);
+      _emitCachedData();
+    } catch(e)
+    {
+      print('Error creating ToDo: $e');
+    }
+  }
+
+  Future<void> updateToDo(String id) async {
+    try {
+      final updateToDo = await _apiService.updateToDo(id);
+      await _todoBox.put(id, updateToDo);
+      _emitCachedData();
+    } catch (e)
+    {
+      print('Error updating ToDo: $e');
+    }
+  }
+
+  Future<void> refreshToDos() async {
+    await _fetchAndCacheToDos();
+  }
+
   void dispose() {
     _toDosController.close();
   }
