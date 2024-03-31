@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mapbox_gl_dart/mapbox_gl_dart.dart';
 
 void main() {
   runApp(const MyApp());
