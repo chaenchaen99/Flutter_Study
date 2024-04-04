@@ -8,7 +8,7 @@ part 'email_state.dart';
 
 class EmailBloc extends Bloc<EmailEvent, EmailState> {
   EmailBloc() : super (const EmailState(email:'', isValid: false)) {
-
+    on<EmailChanged>(_onEmailChanged);
   }
 
   void _onEmailChanged(EmailChanged event, Emitter<EmailState> emit){

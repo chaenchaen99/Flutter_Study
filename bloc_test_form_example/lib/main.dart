@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/email_bloc.dart';
+import 'bloc/name_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => EmailBloc()),
+        BlocProvider(create: (context) => NameBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
