@@ -5,6 +5,8 @@ import 'package:bloc_test_form_example/pages/step_two.dart';
 import 'package:bloc_test_form_example/widgets/flat_button.dart';
 import 'package:flutter/material.dart';
 
+import '../regx.dart';
+
 class StepOne extends StatefulWidget {
   const StepOne({super.key});
 
@@ -18,7 +20,7 @@ class _StepOneState extends State<StepOne> {
 
   void _checkEmailValidity() {
     final email = _emailController.text;
-    final isEmailValid = RegExp(r'^[a-zA-Z0-9._]+@[a-zA-Z0-9]+\.[a-zA-Z]+').hasMatch(email);
+    final isEmailValid = emailRegExp.hasMatch(email);
 
     setState(() {
       _isButtonActive = isEmailValid;
