@@ -1,3 +1,4 @@
+import 'package:bloc_test_form_example/bloc/password_bloc.dart';
 import 'package:bloc_test_form_example/pages/step_one.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => EmailBloc()),
         BlocProvider(create: (context) => NameBloc()),
+        BlocProvider(create: (context) => PasswordBloc()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

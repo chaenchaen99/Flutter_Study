@@ -11,3 +11,7 @@ final class EmailChanged extends EmailEvent {
 
   const EmailChanged(this.email);
 }
+
+final class EmailSubmitted extends EmailEvent {
+  const EmailSubmitted();
+}
