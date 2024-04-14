@@ -1,14 +1,10 @@
-import 'dart:ffi';
-
 import 'package:flutter_chat_gpt/constants.dart';
 import 'package:flutter_chat_gpt/utils/chat_date_utils.dart';
 import 'package:hive/hive.dart';
-
 import '../../../hive_model/chat_item_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'chat_list_event.dart';
-
 part 'chat_list_state.dart';
 
 class ChatListBloc extends Bloc<ChatListEvent, ChatListState> {
