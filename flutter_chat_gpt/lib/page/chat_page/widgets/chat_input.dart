@@ -1,6 +1,7 @@
 //채팅을 입력하는 부분
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ChatInput extends StatefulWidget {
   final Function(String message) onSend;
@@ -34,12 +35,14 @@ class _ChatInputState extends State<ChatInput> {
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          TextField(
-            controller: _controller,
-            decoration: const InputDecoration(
-              hintText: 'Type a message',
+          Expanded(
+            child: TextField(
+              controller: _controller,
+              decoration: const InputDecoration(
+                hintText: 'Type a message',
+              ),
+              enabled: !widget.isLoading,
             ),
-            enabled: !widget.isLoading,
           ),
           widget.isLoading
               ? Container(
