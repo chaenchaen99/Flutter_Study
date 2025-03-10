@@ -1,17 +1,15 @@
-name: webview_sample
+name: flutter_simple_app_statement
 description: "A new Flutter project."
 publish_to: 'none'
 version: 0.1.0
 
 environment:
-  sdk: '>=3.6.0 <4.0.0'
+  sdk: '>=3.4.3 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_inappwebview: ^6.1.5
-  path_provider: ^2.1.5
-  webview_flutter: ^4.10.0
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
